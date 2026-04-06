@@ -1,46 +1,56 @@
-# Astro Starter Kit: Basics
+# Skolh Landing Page
 
-```sh
-pnpm create astro@latest -- --template basics
+Landing page marketing untuk aplikasi **Skolh** — platform manajemen sekolah modern.
+
+Dibangun dengan Astro, tanpa framework CSS tambahan. Desain mengikuti gaya flat design modern dengan ilustrasi isometric SVG.
+
+## Fitur
+
+- Hero section dengan ilustrasi isometric SVG animasi
+- Section klien (logo strip sekolah)
+- Grid fitur aplikasi Skolh
+- Alur cara kerja 4 langkah
+- Testimoni dari pengguna
+- CTA section & footer
+- Responsive untuk semua ukuran layar
+- Lucide icons (inline SVG, tanpa install)
+- Pure CSS — tidak ada dependency Tailwind atau UI library
+
+## Struktur Project
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro      # Global styles & CSS variables
+│   └── pages/
+│       └── index.astro       # Halaman utama (semua section)
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Menjalankan Lokal
 
-## 🧞 Commands
+```bash
+pnpm install
+pnpm dev
+```
 
-All commands are run from the root of the project, from a terminal:
+Buka `http://localhost:4321`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Build
 
-## 👀 Want to learn more?
+```bash
+pnpm build
+pnpm preview
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Output build ada di folder `./dist/`.
+
+## Tech Stack
+
+- [Astro](https://astro.build) v6
+- Pure CSS dengan custom properties
+- Inline Lucide SVG icons
+- Plus Jakarta Sans (Google Fonts)

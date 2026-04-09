@@ -14,12 +14,12 @@ const ICONS = {
 };
 
 const features = [
-	{ icon: ICONS.graduation, cls: 'f-1', title: 'SPMB Online', desc: 'Sistem Penerimaan Murid Baru lengkap dengan custom field, status tracking, dan ekspor PDF.' },
-	{ icon: ICONS.calendar, cls: 'f-2', title: 'Agenda & Pengumuman', desc: 'Kelola agenda sekolah dan pengumuman dengan lampiran file untuk diakses publik.' },
-	{ icon: ICONS.users, cls: 'f-3', title: 'Manajemen Siswa & Alumni', desc: 'Data siswa aktif dan profil alumni terorganisir dengan baik dalam satu sistem.' },
-	{ icon: ICONS.building, cls: 'f-4', title: 'Profil Sekolah', desc: 'Visi misi, fasilitas, ekstrakurikuler, prestasi, dan struktur organisasi yang lengkap.' },
-	{ icon: ICONS.pen, cls: 'f-5', title: 'CMS Artikel & Galeri', desc: 'Publikasikan artikel dengan editor kaya dan kelola galeri foto kegiatan sekolah.' },
-	{ icon: ICONS.palette, cls: 'f-6', title: 'Multi Tema', desc: 'Pilih tema yang sesuai identitas sekolah Anda dengan kustomisasi warna dan layout.' },
+	{ icon: ICONS.graduation, cls: 'f-1', bc: 'bc-1', span: 'bento-span-2', title: 'SPMB Online', desc: 'Sistem Penerimaan Murid Baru lengkap dengan custom field, status tracking, dan ekspor PDF.' },
+	{ icon: ICONS.calendar, cls: 'f-2', bc: 'bc-2', span: '', title: 'Agenda & Pengumuman', desc: 'Kelola agenda sekolah dan pengumuman dengan lampiran file untuk diakses publik.' },
+	{ icon: ICONS.users, cls: 'f-3', bc: 'bc-3', span: '', title: 'Manajemen Siswa & Alumni', desc: 'Data siswa aktif dan profil alumni terorganisir dengan baik dalam satu sistem.' },
+	{ icon: ICONS.building, cls: 'f-4', bc: 'bc-4', span: 'bento-span-2', title: 'Profil Sekolah', desc: 'Visi misi, fasilitas, ekstrakurikuler, prestasi, dan struktur organisasi yang lengkap.' },
+	{ icon: ICONS.pen, cls: 'f-5', bc: 'bc-5', span: '', title: 'CMS Artikel & Galeri', desc: 'Publikasikan artikel dengan editor kaya dan kelola galeri foto kegiatan sekolah.' },
+	{ icon: ICONS.palette, cls: 'f-6', bc: 'bc-6', span: '', title: 'Multi Tema', desc: 'Pilih tema yang sesuai identitas sekolah Anda dengan kustomisasi warna dan layout.' },
 ];
 
 const clients = [
@@ -195,14 +195,26 @@ const testimonials = [
 				<h2 class="section-title">Semua yang Sekolah Anda Butuhkan</h2>
 				<p class="section-sub">Dari profil sekolah sampai penerimaan siswa baru online — Skolh menyediakan modul yang siap pakai dan mudah dikustomisasi.</p>
 			</div>
-			<div class="features-grid">
+			<div class="bento-grid">
 				{features.map((f) => (
-					<div class="feature">
-						<div class={`feature-icon ${f.cls}`}>
-							<svg class="lucide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" set:html={f.icon}></svg>
+					<div class={`bento-card ${f.bc} ${f.span}`}>
+						<div class="bento-bg">
+							<div class="bento-blob"></div>
 						</div>
-						<h3>{f.title}</h3>
-						<p>{f.desc}</p>
+						<div class="bento-content">
+							<div class={`bento-icon ${f.cls}`}>
+								<svg class="lucide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" set:html={f.icon}></svg>
+							</div>
+							<h3>{f.title}</h3>
+							<p>{f.desc}</p>
+						</div>
+						<div class="bento-cta">
+							<a href="#cta" class="bento-cta-link">
+								Pelajari lebih lanjut
+								<svg class="lucide" style="width:14px;height:14px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" set:html={ICONS.arrowRight}></svg>
+							</a>
+						</div>
+						<div class="bento-overlay"></div>
 					</div>
 				))}
 			</div>

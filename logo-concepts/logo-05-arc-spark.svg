@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="44" fill="#5b6cff"/>
+  <!-- Abstract S formed by two offset circles / arcs — modern tech feel -->
+  <!-- Top arc (curves right) -->
+  <path fill="#fff" fill-rule="evenodd"
+    d="M100 40
+       C120 40 142 54 142 76
+       C142 98 122 110 102 110
+       L98 110
+       C78 110 58 122 58 144
+       C58 162 76 162 100 162
+       C118 162 142 154 142 140
+       L134 140
+       C134 150 120 154 100 154
+       C80 154 66 150 66 144
+       C66 128 82 118 100 118
+       L104 118
+       C126 118 150 104 150 76
+       C150 50 126 32 100 32
+       C76 32 56 46 56 64
+       C56 76 62 84 72 88
+       L72 80
+       C66 76 64 70 64 64
+       C64 50 80 40 100 40Z"/>
+  <!-- Inner detail dots -->
+  <circle cx="100" cy="100" r="7" fill="#fff"/>
+</svg>

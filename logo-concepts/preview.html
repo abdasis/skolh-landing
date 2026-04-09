@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skolh Logo Concepts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: #0d0f1c;
+      color: #e2e4f0;
+      min-height: 100vh;
+      padding: 60px 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    header p {
+      color: #6c7398;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      padding: 28px 20px;
+      border-radius: 16px;
+      border: 2px solid transparent;
+      background: rgba(255,255,255,0.04);
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .card:hover {
+      border-color: #5b6cff;
+      background: rgba(91,108,255,0.08);
+      transform: translateY(-4px);
+    }
+    .card.selected {
+      border-color: #5b6cff;
+      background: rgba(91,108,255,0.12);
+    }
+
+    .logo-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(91,108,255,0.35);
+    }
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .card-label {
+      text-align: center;
+    }
+    .card-label .num {
+      font-size: 11px;
+      font-weight: 700;
+      color: #5b6cff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 4px;
+    }
+    .card-label .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #c8ccdf;
+    }
+
+    /* Size preview section */
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .sizes-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+    .size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .size-item img {
+      display: block;
+      border-radius: calc(var(--s) * 0.22);
+    }
+    .size-item span {
+      font-size: 11px;
+      color: #6c7398;
+      font-weight: 600;
+    }
+
+    /* Navbar mockup */
+    .navbar-mockup {
+      max-width: 900px;
+      margin: 60px auto 0;
+      background: rgba(250,251,252,0.95);
+      border-radius: 14px;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    .mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      color: #1a1d2e;
+    }
+    .mock-brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+    }
+    .mock-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #525873;
+    }
+    .mock-btn {
+      background: #1a1d2e;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .instructions {
+      text-align: center;
+      margin-top: 48px;
+      color: #6c7398;
+      font-size: 14px;
+    }
+    .instructions strong { color: #5b6cff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Skolh — Logo Concepts</h1>
+    <p>5 konsep brand mark • Klik untuk memilih • Navbar mockup di bawah</p>
+  </header>
+
+  <div class="grid">
+    <div class="card" onclick="select(this,'logo-01-s-geometric.svg','Geometric S')">
+      <div class="logo-wrap">
+        <img src="logo-01-s-geometric.svg" alt="Concept 1">
+      </div>
+      <div class="card-label">
+        <div class="num">Konsep 01</div>
+        <div class="name">Geometric S</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="select(this,'logo-02-s-bold-negative.svg','Bold S')">
+      <div class="logo-wrap">
+        <img src="logo-02-s-bold-negative.svg" alt="Concept 2">
+      </div>
+      <div class="card-label">
+        <div class="num">Konsep 02</div>
+        <div class="name">Bold S</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="select(this,'logo-03-book-s.svg','Book + S')">
+      <div class="logo-wrap">
+        <img src="logo-03-book-s.svg" alt="Concept 3">
+      </div>
+      <div class="card-label">
+        <div class="num">Konsep 03</div>
+        <div class="name">Book + S</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="select(this,'logo-04-graduation-s.svg','Graduation S')">
+      <div class="logo-wrap">
+        <img src="logo-04-graduation-s.svg" alt="Concept 4">
+      </div>
+      <div class="card-label">
+        <div class="num">Konsep 04</div>
+        <div class="name">Graduation S</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="select(this,'logo-05-arc-spark.svg','Arc Spark')">
+      <div class="logo-wrap">
+        <img src="logo-05-arc-spark.svg" alt="Concept 5">
+      </div>
+      <div class="card-label">
+        <div class="num">Konsep 05</div>
+        <div class="name">Arc Spark</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Size test for selected logo -->
+  <div class="sizes-row" id="sizes-row">
+    <div class="size-item">
+      <img id="sz-200" src="logo-02-s-bold-negative.svg" style="--s:200px;width:200px;height:200px;border-radius:44px;">
+      <span>200px</span>
+    </div>
+    <div class="size-item">
+      <img id="sz-100" src="logo-02-s-bold-negative.svg" style="--s:100px;width:100px;height:100px;border-radius:22px;">
+      <span>100px</span>
+    </div>
+    <div class="size-item">
+      <img id="sz-64" src="logo-02-s-bold-negative.svg" style="--s:64px;width:64px;height:64px;border-radius:14px;">
+      <span>64px</span>
+    </div>
+    <div class="size-item">
+      <img id="sz-36" src="logo-02-s-bold-negative.svg" style="--s:36px;width:36px;height:36px;border-radius:8px;">
+      <span>36px</span>
+    </div>
+    <div class="size-item">
+      <img id="sz-20" src="logo-02-s-bold-negative.svg" style="--s:20px;width:20px;height:20px;border-radius:4px;">
+      <span>20px</span>
+    </div>
+  </div>
+
+  <!-- Navbar mockup -->
+  <div class="navbar-mockup">
+    <div class="mock-brand">
+      <img id="nav-logo" src="logo-02-s-bold-negative.svg" alt="Skolh">
+      Skolh
+    </div>
+    <div class="mock-links">
+      <span>Fitur</span>
+      <span>Klien</span>
+      <span>Cara Kerja</span>
+      <span>Testimoni</span>
+      <span>Tim</span>
+    </div>
+    <div class="mock-btn">Mulai Gratis →</div>
+  </div>
+
+  <p class="instructions">Klik konsep untuk preview di navbar • Pilih satu lalu beritahu saya nomornya (<strong>01–05</strong>)</p>
+
+  <script>
+    function select(el, src, name) {
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      ['sz-200','sz-100','sz-64','sz-36','sz-20'].forEach(id => {
+        document.getElementById(id).src = src;
+      });
+      document.getElementById('nav-logo').src = src;
+    }
+  </script>
+</body>
+</html>

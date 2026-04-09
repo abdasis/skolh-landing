@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="44" fill="#5b6cff"/>
+  <!-- Graduation cap shape with S inside -->
+  <!-- Cap top (mortarboard) -->
+  <polygon points="100,38 168,70 100,102 32,70" fill="#fff"/>
+  <!-- Cap body below -->
+  <rect x="76" y="94" width="48" height="38" rx="4" fill="#fff"/>
+  <!-- Tassel line -->
+  <line x1="168" y1="70" x2="168" y2="110" stroke="#fff" stroke-width="4"/>
+  <circle cx="168" cy="114" r="6" fill="#fff"/>
+  <!-- S carved into cap body (negative space in blue) -->
+  <path fill="#5b6cff" fill-rule="evenodd"
+    d="M100 100 C94 100 89 103 89 108 C89 112 92 114 96 116
+       L104 119 C109 121 113 124 113 130
+       C113 136 108 139 100 139
+       C92 139 87 135 87 129 L91 129
+       C91 134 95 136 100 136 C105 136 109 134 109 130
+       C109 126 106 124 102 122 L94 119
+       C90 117 85 114 85 108 C85 101 92 97 100 97
+       C108 97 115 101 115 108 L111 108
+       C111 103 106 100 100 100Z"/>
+</svg>

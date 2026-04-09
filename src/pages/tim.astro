@@ -1,0 +1,321 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import TeamCards from '../components/TeamCards.tsx';
+---
+
+<Layout>
+	<Navbar activePage="tim" />
+
+	<section class="team-hero">
+		<div class="team-hero-grid-bg"></div>
+		<div class="team-hero-glow"></div>
+		<div class="container team-hero-inner">
+			<span class="eyebrow"><span class="dot"></span> Tim di Balik Skolh</span>
+			<h1 class="team-hero-title">
+				Dibangun oleh <span class="team-hero-accent">orang-orang yang peduli</span> dengan pendidikan
+			</h1>
+			<p class="team-hero-sub">
+				Skolh dirancang dan dikembangkan oleh tim kecil yang passionate — menggabungkan engineering yang solid dan desain yang manusiawi untuk membantu sekolah Indonesia naik kelas secara digital.
+			</p>
+		</div>
+	</section>
+
+	<section class="team-section">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-tag">Meet The Team</div>
+				<h2 class="section-title">Dua orang, satu misi</h2>
+				<p class="section-sub">Fokus pada kualitas, konsistensi, dan rasa — bukan sekadar menambah fitur.</p>
+			</div>
+			<TeamCards client:load />
+		</div>
+	</section>
+
+	<section class="sponsors-section">
+		<div class="container">
+			<div class="sponsors-head">
+				<p>Didukung & dipercaya oleh</p>
+			</div>
+			<div class="sponsors-grid">
+				<div class="sponsor-card">
+					<div class="sponsor-logo" style="background:linear-gradient(135deg,#4f46e5,#7c3aed)">V</div>
+					<span>Vercel</span>
+				</div>
+				<div class="sponsor-card">
+					<div class="sponsor-logo" style="background:linear-gradient(135deg,#0ea5e9,#2563eb)">S</div>
+					<span>Supabase</span>
+				</div>
+				<div class="sponsor-card">
+					<div class="sponsor-logo" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">C</div>
+					<span>Cloudflare</span>
+				</div>
+				<div class="sponsor-card">
+					<div class="sponsor-logo" style="background:linear-gradient(135deg,#10b981,#059669)">M</div>
+					<span>Midtrans</span>
+				</div>
+				<div class="sponsor-card">
+					<div class="sponsor-logo" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">F</div>
+					<span>Figma</span>
+				</div>
+				<div class="sponsor-card">
+					<div class="sponsor-logo" style="background:linear-gradient(135deg,#1a1d2e,#404460)">G</div>
+					<span>GitHub</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<style is:global>
+	/* ===== TEAM HERO ===== */
+	.team-hero {
+		position: relative;
+		padding: 100px 0 60px;
+		overflow: hidden;
+		background: #fafbfc;
+	}
+	.team-hero-grid-bg {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(to right, rgba(91, 108, 255, 0.07) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(91, 108, 255, 0.07) 1px, transparent 1px);
+		background-size: 48px 48px;
+		mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 90%);
+		-webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 90%);
+		pointer-events: none;
+	}
+	.team-hero-glow {
+		position: absolute;
+		top: -100px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 700px;
+		height: 400px;
+		background: radial-gradient(ellipse, rgba(139, 92, 246, 0.18) 0%, transparent 60%);
+		filter: blur(40px);
+		pointer-events: none;
+	}
+	.team-hero-inner {
+		position: relative;
+		text-align: center;
+		max-width: 780px;
+	}
+	.team-hero-inner {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.team-hero-title {
+		font-size: clamp(32px, 5vw, 54px);
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+		margin: 22px 0 20px;
+		color: var(--ink);
+	}
+	.team-hero-accent {
+		background: linear-gradient(135deg, #5b6cff 0%, #8b5cf6 50%, #ec4899 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.team-hero-sub {
+		font-size: 17px;
+		line-height: 1.7;
+		color: var(--ink-2);
+		max-width: 640px;
+		margin: 0 auto;
+	}
+
+	/* ===== TEAM SECTION ===== */
+	.team-section {
+		padding: 60px 0 120px;
+		background: #fafbfc;
+	}
+
+	/* grid */
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+		max-width: 880px;
+		margin: 0 auto;
+	}
+	@media (max-width: 780px) { .team-grid { grid-template-columns: 1fr; max-width: 480px; } }
+
+	/* card */
+	.team-card {
+		background: #fff;
+		border: 1px solid #eceef5;
+		border-radius: 20px;
+		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		transition: box-shadow 0.25s ease, transform 0.25s ease;
+	}
+	.team-card:hover {
+		box-shadow: 0 12px 40px -12px rgba(10, 11, 30, 0.12);
+		transform: translateY(-4px);
+	}
+
+	/* top row: avatar + name/role */
+	.tc-top {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+	.tc-avatar {
+		width: 60px;
+		height: 60px;
+		border-radius: 16px;
+		flex-shrink: 0;
+		display: grid;
+		place-items: center;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		overflow: hidden;
+	}
+	.tc-avatar img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top center;
+		display: block;
+	}
+	.tc-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	.tc-role {
+		font-size: 11.5px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--tc);
+		margin: 0;
+	}
+	.tc-name {
+		font-size: 20px;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: var(--ink);
+		margin: 0;
+	}
+
+	/* tagline */
+	.tc-tagline {
+		font-size: 14px;
+		line-height: 1.65;
+		color: var(--ink-2);
+		margin: 0;
+		flex: 1;
+	}
+
+	/* skills */
+	.tc-skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+	.tc-skill {
+		font-size: 12px;
+		font-weight: 600;
+		padding: 4px 10px;
+		border-radius: 6px;
+		background: #f5f6fb;
+		color: var(--ink-2);
+		border: 1px solid #eceef5;
+	}
+
+	/* footer: socials */
+	.tc-footer {
+		display: flex;
+		gap: 8px;
+		padding-top: 16px;
+		border-top: 1px solid #eceef5;
+	}
+	.tc-social {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--ink-2);
+		padding: 6px 12px;
+		border-radius: 8px;
+		border: 1px solid #eceef5;
+		background: #f5f6fb;
+		transition: color 0.2s, border-color 0.2s, background 0.2s;
+		text-decoration: none;
+	}
+	.tc-social:hover {
+		color: var(--tc);
+		border-color: var(--tc);
+		background: #fff;
+	}
+
+	/* ===== SPONSORS ===== */
+	.sponsors-section {
+		background: #fff;
+		border-top: 1px solid #eceef5;
+		padding: 64px 0;
+	}
+	.sponsors-head {
+		text-align: center;
+		margin-bottom: 36px;
+	}
+	.sponsors-head p {
+		color: var(--muted);
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		font-size: 13px;
+		margin: 0;
+	}
+	.sponsors-grid {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 16px;
+		align-items: center;
+	}
+	@media (max-width: 900px) { .sponsors-grid { grid-template-columns: repeat(3, 1fr); } }
+	@media (max-width: 500px) { .sponsors-grid { grid-template-columns: repeat(2, 1fr); } }
+
+	.sponsor-card {
+		background: #fff;
+		border: 1px solid #eceef5;
+		border-radius: 14px;
+		padding: 20px 14px;
+		text-align: center;
+		font-weight: 600;
+		color: var(--ink-2);
+		font-size: 13.5px;
+		transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+		cursor: default;
+	}
+	.sponsor-card:hover {
+		border-color: #d9ddee;
+		box-shadow: 0 8px 24px -8px rgba(10, 11, 30, 0.1);
+		transform: translateY(-3px);
+	}
+	.sponsor-logo {
+		width: 44px;
+		height: 44px;
+		border-radius: 12px;
+		display: grid;
+		place-items: center;
+		margin: 0 auto 10px;
+		color: #fff;
+		font-size: 18px;
+		font-weight: 800;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+	}
+</style>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="44" fill="#5b6cff"/>
+  <!-- Open book with S carved in pages -->
+  <!-- Left page -->
+  <path fill="#fff" fill-rule="evenodd"
+    d="M38 56 L38 152 Q38 160 46 160 L97 160 L97 56 Q68 48 38 56Z
+       M50 80 L85 80 L85 88 L50 88Z
+       M50 100 L85 100 L85 108 L50 108Z
+       M50 120 L75 120 L75 128 L50 128Z"/>
+  <!-- Right page with S shape carved out -->
+  <path fill="#fff" fill-rule="evenodd"
+    d="M103 56 L103 160 L154 160 Q162 160 162 152 L162 56 Q132 48 103 56Z"/>
+  <!-- S carved (negative) on right page -->
+  <path fill="#5b6cff" fill-rule="evenodd"
+    d="M133 72 C128 72 120 76 120 84 C120 90 124 93 130 96
+       L140 100 C148 104 152 110 152 118 C152 130 142 136 133 136
+       C124 136 115 131 115 120 L121 120
+       C121 128 127 130 133 130 C139 130 146 126 146 118
+       C146 112 142 108 136 105 L126 101
+       C120 98 114 92 114 84 C114 72 122 66 133 66
+       C143 66 152 72 152 82 L146 82 C146 76 140 72 133 72Z"/>
+  <!-- Spine -->
+  <rect x="97" y="52" width="6" height="112" rx="3" fill="#fff" opacity="0.6"/>
+</svg>

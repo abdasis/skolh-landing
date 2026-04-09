@@ -1,0 +1,35 @@
+---
+interface Props {
+	activePage?: 'home' | 'tim' | 'contact';
+}
+const { activePage = 'home' } = Astro.props;
+const arrowRight = '<path d="M5 12h14M12 5l7 7-7 7"/>';
+---
+
+<header class="nav">
+	<div class="container nav-inner">
+		<a href="/" class="brand">
+			<span class="brand-mark">S</span>
+			Skolh
+		</a>
+		<nav class="nav-links">
+			<a href="/#fitur" class:list={[{ 'nav-active': activePage === 'home' }]}>Fitur</a>
+			<a href="/#klien">Klien</a>
+			<a href="/#cara-kerja">Cara Kerja</a>
+			<a href="/#testimoni">Testimoni</a>
+			<a href="/tim" class:list={[{ 'nav-active': activePage === 'tim' }]}>Tim</a>
+			<a href="/contact" class:list={[{ 'nav-active': activePage === 'contact' }]}>Kontak</a>
+		</nav>
+		<a href="/#cta" class="nav-cta">
+			Mulai Gratis
+			<svg class="lucide" style="width:16px;height:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" set:html={arrowRight}></svg>
+		</a>
+	</div>
+</header>
+
+<style is:global>
+	.nav-active {
+		color: var(--primary) !important;
+		font-weight: 600;
+	}
+</style>
